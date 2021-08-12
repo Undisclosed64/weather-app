@@ -1,14 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-
 * {
   box-sizing: border-box;
 }
 body {
   background-color: #242424;
-  /*font-family: "Roboto", sans-serif;
-  font-family: "Poppins", sans-serif;*/
   font-family: "Lato", sans-serif;
 }
 .container {
@@ -21,11 +16,6 @@ body {
   background-color: antiquewhite;
   background-size: cover;
   background-position: center;
-}
-.container::after {
-  /*display: block;
-  content: "";
-  clear: both;*/
 }
 .section-rhs {
   /*display: flex;
@@ -62,7 +52,6 @@ input {
   border: none;
   background-color: transparent;
 }
-
 .search_btn {
   border: solid 1px;
   border-bottom: transparent !important;
@@ -80,8 +69,6 @@ input {
 .search_logo {
   width: 22px;
   height: 29px;
-}
-.section-lhs {
 }
 .lhs {
   color: #eee;
@@ -123,11 +110,4 @@ input {
   font-size: 20px;
   letter-spacing: 1px;
   position: relative;
-}
-.date {
-  /*display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 10px;
-  font-size: 20px;*/
 }
