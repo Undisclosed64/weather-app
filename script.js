@@ -20,6 +20,10 @@ processFetchedData(responseData);
 };
 
  function processFetchedData(data){
+    /*let locationIcon = document.querySelector('.weather-icon');
+    const {icon} = data.weather[0];
+    locationIcon.innerHTML = `<img src="icons/${icon}.png">`;*/
+
      const dataObj = {
         temp: data.main['temp'],
         feelsLike: data.main['feels_like'],
@@ -31,11 +35,14 @@ processFetchedData(responseData);
         sunrise:data.sys.sunrise,
         sunset:data.sys.sunset,
         windSpeed:data.wind.speed,
-        icon: data.weather[0]['icon']
+      icon: data.weather[0]
      };
      createDOMElements(dataObj);
+     weatherChangeEffect(dataObj);
     }
     function createDOMElements(location){
+       
+
         //select lhs,lhs content
         const lhs = document.querySelector('.lhs');
         const lhsContent = document.querySelector('.lhs-content');
@@ -54,11 +61,14 @@ processFetchedData(responseData);
          dateField.innerText = formatDate;
          name.innerText = location.locationName;
          name.appendChild(dateField)
-         
-         //handle weather info
-         const weatherInfo = document.querySelector('.weather-desc');
-         weatherInfo.innerText = location.weatherMain;
 
+         //handle weather info and apt icon
+         const weatherInfo = document.querySelector('.weather-desc');
+         let locationIcon = document.querySelector('.weather-icon');
+         const {icon} = location.icon;
+         locationIcon.innerHTML = `<img src="icons/${icon}.png">`;
+         weatherInfo.innerText = location.weatherMain;
+    
          //handle weather details section(RHS)
          let feltTemperatureDiv = document.querySelector('#feelsLike');
          const feltTemperature = Math.round(location.feelsLike);
@@ -82,6 +92,11 @@ processFetchedData(responseData);
          const wind_speed_ = Math.round(location.windSpeed);
          wind_speed.innerHTML = `${wind_speed_} km/h`;
 };
+ function weatherChangeEffect(weather){
+console.log(weather);
+
+
+ }
    
 /*console.log(data.main['temp'],data.main['feels_like'],data.main['humidity'],data.name,data.sys.country,data.weather[0]['description'],data.weather[0]['icon']);*/
 
