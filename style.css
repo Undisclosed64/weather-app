@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
 * {
   box-sizing: border-box;
 }
 body {
   background-color: #242424;
-  font-family: "Lato", sans-serif;
 }
 .container {
   margin: auto;
@@ -28,6 +29,7 @@ body {
   background-color: /*#3d4d4c*/ #24302f;
   background-attachment: scroll;
   backdrop-filter: 5px;
+  font-family: "Roboto", sans-serif;
 }
 
 .rhs {
@@ -70,12 +72,37 @@ input {
   width: 22px;
   height: 29px;
 }
+.weatherDetails {
+  margin: 1em;
+  margin-top: 2em;
+  margin-left: 0;
+}
+.header {
+  color: #eee;
+  border-bottom: 1.5px solid #627977 !important;
+  padding-bottom: 10px;
+  margin-bottom: 2em;
+}
+.weatherDetails ul {
+  list-style: none;
+  padding-left: 0;
+}
+.weatherDetails ul li {
+  padding: 1em;
+  padding-left: 0;
+  color: gray;
+}
+.weatherDetails ul li span {
+  color: #eee;
+  float: right;
+}
 .lhs {
   color: #eee;
   position: relative;
   top: 20em;
   margin: 1em;
   margin-left: 2em;
+  font-family: "Lato", sans-serif;
 }
 .lhs-content {
   display: flex;
@@ -94,8 +121,7 @@ input {
   top: 5px;
 }
 .location span {
-  font-size: 20px;
-  letter-spacing: 1px;
+  font-size: 18px;
 }
 .weather {
   font-size: 1.6rem;
@@ -107,7 +133,6 @@ input {
   top: 15px;
 }
 .weather span {
-  font-size: 20px;
-  letter-spacing: 1px;
+  font-size: 18px;
   position: relative;
 }
