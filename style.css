@@ -129,10 +129,14 @@ input {
   display: flex;
   flex-direction: column;
   position: relative;
-  line-height: 35px;
-  top: 15px;
+  line-height: 15px;
+  bottom: 10px;
 }
 .weather span {
   font-size: 18px;
   position: relative;
+}
+.weather-icon img {
+  width: 60px;
+  filter: invert(100%);
 }
