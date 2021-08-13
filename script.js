@@ -25,12 +25,14 @@ processFetchedData(responseData);
         feelsLike: data.main['feels_like'],
         humidity: data.main['humidity'],
         locationName: data.name,
-        countryName: data.sys.country,
+        rainChance: data.rain,
         weatherMain:data.weather[0]['main'],
         weatherDescription: data.weather[0]['description'],
+        sunrise:data.sys.sunrise,
+        sunset:data.sys.sunset,
+        windSpeed:data.wind.speed,
         icon: data.weather[0]['icon']
      };
-     console.log(dataObj);
      createDOMElements(dataObj);
     }
     function createDOMElements(location){
@@ -44,22 +46,41 @@ processFetchedData(responseData);
          temperature.innerText = Math.round(location.temp);
          temperature.appendChild(tempDeg);
 
-         //handle location name
+         //handle location name and date
          const name = document.querySelector('.location');
-         name.innerText = location.locationName;
-        /* const dateParent = document.querySelector('.date');
-         console.log(dateParent);
+         const dateField = document.querySelector('.date');
          const date = new Date();
-         dateParent.appendChild(date);*/
+         const formatDate = `${moment(date).format("ddd,Do MMM,YY")}`;
+         dateField.innerText = formatDate;
+         name.innerText = location.locationName;
+         name.appendChild(dateField)
          
          //handle weather info
          const weatherInfo = document.querySelector('.weather-desc');
          weatherInfo.innerText = location.weatherMain;
 
-
+         //handle weather details section(RHS)
+         let feltTemperatureDiv = document.querySelector('#feelsLike');
+         const feltTemperature = Math.round(location.feelsLike);
+         feltTemperatureDiv.innerHTML = `${feltTemperature} &degC`;
+         
+         const humidity = document.querySelector('#humidity');
+         humidity.innerText = `${location.humidity}%`;
+         
+         const desc = document.querySelector("#description");
+         desc.innerText = location.weatherDescription;
        
+         const sunrise = document.querySelector('#sunrise');
+         const sunriseTime = moment.unix(location.sunrise).format('HH:MM');
+         sunrise.innerText = sunriseTime;
 
-   
+         const sunset = document.querySelector('#sunset');
+         const sunsetTime = moment.unix(location.sunset).format('HH:MM')
+         sunset.innerText = sunsetTime;   
+
+         const wind_speed = document.querySelector('#windSpeed');
+         const wind_speed_ = Math.round(location.windSpeed);
+         wind_speed.innerHTML = `${wind_speed_} km/h`;
 };
    
 /*console.log(data.main['temp'],data.main['feels_like'],data.main['humidity'],data.name,data.sys.country,data.weather[0]['description'],data.weather[0]['icon']);*/
