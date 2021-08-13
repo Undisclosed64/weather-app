@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type = "text/JavaScript" src = " https://MomentJS.com/downloads/moment.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,6 +18,20 @@
                 <input type="text"placeholder="Another location">
                 <button class="search_btn"><img class="search_logo" src="search.svg" alt="search-button" /></button>
          </div> 
+<div class="weatherDetails">
+    <div class="header">Weather Details</div>
+<ul id="rhs-ul">
+    <li>Feels like<span id="feelsLike">21 &degC</span></li>
+    <li>Humidity<span id="humidity">72%</span></li>
+    <li>Wind speed<span id="windSpeed">1 km/hr</span></li>
+    <li>Description<span id="description">overcast clouds</span></li>
+    <li>Chances of rain<span id="country">Null</span></li>
+    <li>Sunrise<span id="sunrise">21:08</span></li>
+    <li>Sunset<span id="sunset">12:08</span></li>
+
+</ul>
+</div>
+
         </div>
         </div>
         </div>
@@ -27,7 +42,7 @@
             <div class="temperature">08<span class="tempDeg">&degC<!--&#8451;&#176--></span>
             </div>
             <div class="location">London
-            <span class="date">Sunday|6Aug|21</span>
+            <span class="date">Sun,6th Aug,21</span>
         </div>
 
             <div class="weather"><i class="fa fa-tint"></i>
