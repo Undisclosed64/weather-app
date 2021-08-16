@@ -1,5 +1,4 @@
 
-//bismillah
 //select necessary DOM elements
 const searchInput = document.querySelector('input');
 const searchBtn = document.querySelector('.search_btn');
@@ -22,7 +21,7 @@ const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?APP
 handleErr(response);
 //return response body
 const responseData = await response.json();
-console.log(responseData); 
+//console.log(responseData); 
 
 //call processFetchedData function 
 processFetchedData(responseData);
