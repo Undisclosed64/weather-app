@@ -16,7 +16,7 @@ searchBtn.addEventListener('click', () => {
 //get search input value
 const searchValue = searchInput.value;
 //request to api
-const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?APPID=7632a408d6b0f55924e9958de6220968&q=${searchValue}&units=metric`,{ mode: 'cors'});
+const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?APPID=7632a408d6b0f55924e9958de6220968&q=${searchValue}&units=metric`,{ mode: 'cors'});
 
 handleErr(response);
 //return response body
