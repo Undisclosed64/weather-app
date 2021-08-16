@@ -22,12 +22,13 @@ const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?APP
 handleErr(response);
 //return response body
 const responseData = await response.json();
-//console.log(response); 
+console.log(responseData); 
 
 //call processFetchedData function 
 processFetchedData(responseData);
   
 };
+showTime();
 //simple err handle function
 function handleErr(res){
   if(res.ok === false){
@@ -65,12 +66,9 @@ function handleErr(res){
          temperature.innerText = Math.round(location.temp);
          temperature.appendChild(tempDeg);
 
-         //handle location name and  current date
+         //handle location name
          const name = document.querySelector('.location');
          const dateField = document.querySelector('.date');
-         const date = new Date();
-         const formatDate = `${moment(date).format("ddd,Do MMM,YY")}`;
-         dateField.innerText = formatDate;
          name.innerText = location.locationName;
          name.appendChild(dateField)
 
@@ -107,7 +105,26 @@ function handleErr(res){
          const sunsetTime = moment.unix(location.sunset).format('HH:MM')
          sunset.innerText = sunsetTime;   
 };
+function showTime() {
+  const dateField = document.querySelector('.date');
+  let today = new Date(),
+      hour = today.getHours(),
+      min = today.getMinutes(),
+      sec = today.getSeconds();
+  
+  const amPm = hour >=12 ? "PM" : "AM";
+  
+  hour = hour %12 || 12;
+  
+  dateField.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${amPm}`;
+  
+  setTimeout(showTime, 1000);
 
+}
+function addZero(n) {
+  return (parseInt(n,10) < 10 ? "0" : '') + n
+}
+ 
 //have some background change effect depending upon weather change
  function weatherChangeEffect(weather){
    //select weather status
@@ -115,20 +132,20 @@ function handleErr(res){
 
    //do some comparisons and change container bg depending upon that
    if(weatherStatus === 'Clear' || weatherStatus === 'Sunny'){
-       container.style.backgroundImage = "url(https://images.pexels.com/photos/1526713/pexels-photo-1526713.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)";
-       container.style.backgroundPosition = "top"
+       container.style.backgroundImage = "url(./images/clear.jpeg)";
+       container.style.backgroundPosition = "top";
        body.classList.add('bgClear');
 
    } else if(weatherStatus === 'Haze' || weatherStatus === 'Mist' || weatherStatus === 'Smoke'){
-          container.style.backgroundImage = "url(https://images.unsplash.com/photo-1524262134826-05a36ba28ec4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)";
+          container.style.backgroundImage = "url(./images/haze.jpg)";
           body.classList.remove('bgClear');
 
    } else if(weatherStatus === 'Clouds'){
-    container.style.backgroundImage = "url(https://images.unsplash.com/photo-1561484930-998b6a7b22e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)";
+    container.style.backgroundImage = "url(./images/cloudy.jpg)";
     body.classList.remove('bgClear');
 
    } else if(weatherStatus === 'Rain'){
-     container.style.backgroundImage = "url(https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFpbnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)";
+     container.style.backgroundImage = "url(./images/rainy.jpg)";
      body.classList.remove('bgClear');
    }
  }
