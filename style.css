@@ -8,6 +8,9 @@
 body {
   background-color: #242424;
   font-family: "Lato", sans-serif;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 .container {
   background: url("https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFpbnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60");
@@ -17,6 +20,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 input {
   border: none;
