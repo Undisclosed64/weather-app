@@ -2,7 +2,7 @@
 
 # <img src="https://github.com/Undisclosed64/weather-app/blob/main/weatherly.png" alt="weather-project-img" />
 
-## <a href="https://weather-janlo.netlify.app/">Here's the live version.</a>
+## <a href="https://weather-janlo.netlify.app/">Here's </a>the live version.
 
 ## Description:
 The weather app lets you search up any location(city) in the world and get real-time weather data using the Open Weather Map API. It shows us multiple information regarding the location we searched weather of, which includes sunset and sunrise time, the country where the city is etc. The background of the weather app also changes according to the weather. 
