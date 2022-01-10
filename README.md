@@ -1,8 +1,11 @@
 # JavaScript Weather App
 
-# <img src="https://images.unsplash.com/photo-1639402479828-78bb0b67698d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDN8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60" alt="weather-project-img" />
-The weather app lets you search up any location in the world(city) and get real-time weather data using the Open Weather Map API.The project changes it's background image as per the weather.
+# <img src="https://github.com/Undisclosed64/weather-app/blob/main/weatherly.png" alt="weather-project-img" />
 
-The aim of this project was to get familiar with how to interect with API using async await.Here's the LIVE version
+## <a href="https://weather-janlo.netlify.app/">Here's the live version.</a>
 
-https://weather-janlo.netlify.app/
+## Description:
+The weather app lets you search up any location(city) in the world and get real-time weather data using the Open Weather Map API. It shows us multiple information regarding the location we searched weather of, which includes sunset and sunrise time, the country where the city is etc. The background of the weather app also changes according to the weather. 
+The aim of this project was to get familiar with how to interect with API using async await. It taught me to utilize an API effeciently and display the information fetched from the api. I consider this project as one of my best "learned from" one.
+
+
